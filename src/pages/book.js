@@ -10,7 +10,7 @@ const Book = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.post("/products/get_all");
+        const response = await axios.get("/products");
         setProducts(response.data);
       } catch (error) {
         console.error("There was an error fetching the products!", error);

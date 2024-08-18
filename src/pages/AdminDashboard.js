@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.post("/products/get_all");
+      const response = await axios.get("/products");
       setProducts(response.data);
     } catch (error) {
       console.error("There was an error fetching the products!", error);
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     try {
       let response;
       if (editMode) {
-        response = await axios.post(
+        response = await axios.put(
           `/products/update/${editProductId}`,
           formData,
           {
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
   const handleDeleteProduct = async (id) => {
     try {
       console.log("Trying to delete product with id:", id); // Debugging
-      await axios.post(`/products/delete/${id}`);
+      await axios.delete(`/products/delete/${id}`);
       console.log("Product deleted successfully.");
       fetchProducts(); // إعادة تحميل المنتجات بعد الحذف
     } catch (error) {
