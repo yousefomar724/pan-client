@@ -43,7 +43,7 @@ const Menu = () => {
   const sections = ["سندويتشات", "صوصات", "عصيرات", "فطور"];
 
   const groupedProducts = products.reduce((acc, product) => {
-    const section = product.Sections || "غير محدد";
+    const section = product.sections || "غير محدد";
     if (!acc[section]) {
       acc[section] = [];
     }
