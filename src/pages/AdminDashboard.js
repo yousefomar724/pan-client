@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaHome } from "react-icons/fa";
 import "./AdminDashboard.css";
-import axios, { baseURL } from "../services/axios";
+import axios from "../services/axios";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -184,7 +184,7 @@ const AdminDashboard = () => {
                 key={product.id}
               >
                 <img
-                  src={baseURL + product.image}
+                  src={product.image}
                   alt={product.name}
                   className="product-image"
                   loading="lazy"

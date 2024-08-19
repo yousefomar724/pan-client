@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FlipPage from "react-flip-page";
 import "./book.css";
-import axios, { baseURL } from "../services/axios";
+import axios from "../services/axios";
 
 const Book = () => {
   const [products, setProducts] = useState([]);
@@ -44,7 +44,7 @@ const Book = () => {
                 <div key={product.id} className="book-item">
                   <h2>{product.name}</h2>
                   <img
-                    src={baseURL + product.image}
+                    src={product.image}
                     alt={product.name}
                     className="book-item-image"
                   />

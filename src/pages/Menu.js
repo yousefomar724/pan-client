@@ -10,7 +10,7 @@ import {
 import Header from "../components/Header";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import axios, { baseURL } from "../services/axios";
+import axios from "../services/axios";
 
 const Menu = () => {
   const [products, setProducts] = useState([]);
@@ -210,7 +210,7 @@ const Menu = () => {
                   onClick={() => handleProductClick(product)}
                 >
                   <img
-                    src={baseURL + product.image}
+                    src={product.image}
                     alt={product.name}
                     className="product-image"
                     loading="lazy"
@@ -242,10 +242,7 @@ const Menu = () => {
         <div className="product-modal" onClick={(e) => e.stopPropagation()}>
           <div className="modal-content">
             <h2>{selectedProduct.name}</h2>
-            <img
-              src={baseURL + selectedProduct.image}
-              alt={selectedProduct.name}
-            />
+            <img src={selectedProduct.image} alt={selectedProduct.name} />
             <div className="product-details">
               <div className="product-price">{selectedProduct.price} SR</div>
               <div className="product-calories">
