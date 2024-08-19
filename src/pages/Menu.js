@@ -206,7 +206,7 @@ const Menu = () => {
                   className={`product-card ${
                     product.available ? "" : "unavailable"
                   }`}
-                  key={product.id}
+                  key={product._id}
                   onClick={() => handleProductClick(product)}
                 >
                   <img

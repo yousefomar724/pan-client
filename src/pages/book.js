@@ -22,7 +22,7 @@ const Book = () => {
 
   const renderSectionPages = (section) => {
     const filteredProducts = products.filter(
-      (product) => product.Sections === section
+      (product) => product.sections === section
     );
     const pages = [];
 
@@ -41,7 +41,7 @@ const Book = () => {
             <h1>{section}</h1>
             <div className="book-items-container">
               {currentPageItems.map((product) => (
-                <div key={product.id} className="book-item">
+                <div key={product._id} className="book-item">
                   <h2>{product.name}</h2>
                   <img
                     src={product.image}
