@@ -30,7 +30,7 @@ const AdminDashboard = () => {
     formData.append("price", price);
     if (calories) formData.append("calories", calories);
     if (image) formData.append("image", image);
-    formData.append("section", section);
+    formData.append("sections", section);
     formData.append("available", available === "متاح" ? "true" : "false");
 
     try {
